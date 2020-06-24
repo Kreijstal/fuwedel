@@ -13,17 +13,18 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Eingabekodierung
-\usepackage[ansinew]{inputenc}
+%\usepackage[ansinew]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{ae} %wenn Ulaute nicht gehen
 
 \usepackage[ngerman]{babel}
-%\begin{übler Trick um die Orinalüberschrift zu unterdrücken}
-\addto{\captionsngerman}{\renewcommand*{\refname}{}} %Literaturüberschfit unterdrücken
-%\ende{übler Trick}
+%\begin{Ã¼bler Trick um die OrinalÃ¼berschrift zu unterdrÃ¼cken}
+\addto{\captionsngerman}{\renewcommand*{\refname}{}} %LiteraturÃ¼berschfit unterdrÃ¼cken
+%\ende{Ã¼bler Trick}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% für Farbe
+% fÃ¼r Farbe
 \usepackage{color} 
 \definecolor{darkgreen}{rgb}{0,0.5,0} 
 \definecolor{darkblue}{rgb}{0,0,0.5}
@@ -33,11 +34,11 @@
 \usepackage{amsmath} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Ist für Boxen (wie das hier benutzte Ovalbox) zuständig
+% Ist fÃ¼r Boxen (wie das hier benutzte Ovalbox) zustÃ¤ndig
 \usepackage{fancybox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Graphikpaket, ermöglicht png, jpg und pdf bilder
+% Graphikpaket, ermÃ¶glicht png, jpg und pdf bilder
 \usepackage{graphicx}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -45,11 +46,11 @@
 \renewcommand\baselinestretch{1.35}
 \parskip=0.5\baselineskip
 
-\parindent0mm %Einrücktiefe der ersten Zeile eines Absatzes
+\parindent0mm %EinrÃ¼cktiefe der ersten Zeile eines Absatzes
 \topmargin-28pt
 \marginparwidth0mm
 
-%Ränder rechts/links
+%RÃ¤nder rechts/links
 \oddsidemargin-13pt
 \evensidemargin-13pt
 \textwidth785mm
@@ -57,18 +58,18 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Eigene Definitionen zur Erleichterung des Satzes
-\newcommand{\spaltenbreite}{25}   % Spaltenbreite für Bilder
+\newcommand{\spaltenbreite}{25}   % Spaltenbreite fÃ¼r Bilder
 \newcommand{\bildbreite}{25cm}    % Einheitliche Bildbreite
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Box- und Spalteneinstellungen
-\setlength{\fboxrule}{3.25mm} %Definiert die Linienstärke für nachfolgende fbox- und framebox-Befehle
+\setlength{\fboxrule}{3.25mm} %Definiert die LinienstÃ¤rke fÃ¼r nachfolgende fbox- und framebox-Befehle
 \setlength{\fboxsep}{5mm} %Abstand zwischen Rahmen und Text bei den /fbox und /framebox Befehlen.
 \setlength{\columnsep}{15mm}     %Spaltenabstand
 \setlength{\columnseprule}{1pt}  %Balken zwischen Spalten {0pt}->keine Balken
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Einheitslänge für picture-Umgebungen
+% EinheitslÃ¤nge fÃ¼r picture-Umgebungen
 %\setlength{\unitlength}{1.0cm}
 \unitlength1cm
 
@@ -93,18 +94,18 @@
   \begin{center}
     \vspace*{0.006\textheight}
    % Titel und Autor
-    {\huge \textbf{Übersicht über Schaltbare Spiegel}\\}%[0.03\textheight]
+    {\huge \textbf{Schaltbare Spiegel}\\Ãœbersicht Ã¼ber Technologien\\}%[0.03\textheight]
     \vspace*{0.03\textheight}
-    {\large \textbf{Gruppe 15: Nima Astan Varzeghan, Marc Alexander Depping, Andrés Felipe Fonseca Richter,\\Dimitrios Maximilian Kalodikis, Luka Lolovic, Juan Nicolas Pardo Martin}}
+    {\large \textbf{Gruppe 15: Nima Astan Varzeghan, Marc Alexander Depping, AndrÃ©s Felipe Fonseca Richter,\\Dimitrios Maximilian Kalodikis, Luka Lolovic, Juan Nicolas Pardo Martin}}
   \end{center}
   % Logos einbinden (per Hand plazieren)
   \begin{picture}(0,0)
     \put(70.0 , 4.6){\includegraphics[height=80mm]{logo}}
     \put(71.8 , 2.8){\LARGE \textsf{\textbf{TU Berlin}}}
-    \put(0.0  , 4.3){\includegraphics[height=83mm]{logo}}
-    \put(0.0  , 3.1){\large \textsf{\textbf{Funktionswerkstoffe der Elektrotechnik}}}
-    \put(0.0  , 1.75){\large \textsf{\textbf{Prof. Dr.-Ing. Ronald Plath}}}
-    \put(0.0  , 0.4){\large \textsf{\textbf{Prof. Dr. rer. nat. Bernd Szyszka}}}
+    %\put(0.0  , 4.3){\includegraphics[height=83mm]{logo}}
+    \put(0.0  , 8.1){\large \textsf{\textbf{Funktionswerkstoffe der Elektrotechnik}}}
+    \put(0.0  , 6.75){\large \textsf{\textbf{Prof. Dr.-Ing. Ronald Plath}}}
+    \put(0.0  , 5.4){\large \textsf{\textbf{Prof. Dr. rer. nat. Bernd Szyszka}}}
   \end{picture}
 %}
 
@@ -121,13 +122,7 @@
 \Ovalbox
 {
   \parbox{\textwidth}{
-    \begin{multicols}{3}
-      
-      \input{texta}
-      \input{textb}
-      \input{textb}
-      
-    \end{multicols}
+     \input{abstract}
   }
 }
 
@@ -136,11 +131,26 @@
 \vspace*{0.002\textheight}
 \Ovalbox
 {
-  \parbox{\textwidth}{
-    \begin{multicols}{3}
+  \parbox{0.45\textwidth}{
+    \begin{multicols}{2}
       
-      \input{textb}
-      \input{textb}
+      \input{texta}
+      \input{texta}
+      
+    \end{multicols}
+  }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% neuer Kasten
+%\vspace*{0.002\textheight}
+\Ovalbox
+{
+  \parbox{0.45\textwidth}{
+    \begin{multicols}{2}
+      
+      \input{texta}
+      \input{texta}
       
     \end{multicols}
   }
