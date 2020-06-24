@@ -1,0 +1,167 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Thema: Poster
+% Autor: Musterman
+% Datum: 12.05
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\documentclass[a0,portrait]{a0poster}
+%\documentclass[portrait,a0,posterdraft]{a0poster}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Paket zum Erzeugen der Spalten
+\usepackage{multicol}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Eingabekodierung
+\usepackage[ansinew]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{ae} %wenn Ulaute nicht gehen
+
+\usepackage[ngerman]{babel}
+%\begin{übler Trick um die Orinalüberschrift zu unterdrücken}
+\addto{\captionsngerman}{\renewcommand*{\refname}{}} %Literaturüberschfit unterdrücken
+%\ende{übler Trick}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% für Farbe
+\usepackage{color} 
+\definecolor{darkgreen}{rgb}{0,0.5,0} 
+\definecolor{darkblue}{rgb}{0,0,0.5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mathepaket
+\usepackage{amsmath} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ist für Boxen (wie das hier benutzte Ovalbox) zuständig
+\usepackage{fancybox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Graphikpaket, ermöglicht png, jpg und pdf bilder
+\usepackage{graphicx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Seiteneinstellungen
+\renewcommand\baselinestretch{1.35}
+\parskip=0.5\baselineskip
+
+\parindent0mm %Einrücktiefe der ersten Zeile eines Absatzes
+\topmargin-28pt
+\marginparwidth0mm
+
+%Ränder rechts/links
+\oddsidemargin-13pt
+\evensidemargin-13pt
+\textwidth785mm
+%\textheight1140mm
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Eigene Definitionen zur Erleichterung des Satzes
+\newcommand{\spaltenbreite}{25}   % Spaltenbreite für Bilder
+\newcommand{\bildbreite}{25cm}    % Einheitliche Bildbreite
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Box- und Spalteneinstellungen
+\setlength{\fboxrule}{3.25mm} %Definiert die Linienstärke für nachfolgende fbox- und framebox-Befehle
+\setlength{\fboxsep}{5mm} %Abstand zwischen Rahmen und Text bei den /fbox und /framebox Befehlen.
+\setlength{\columnsep}{15mm}     %Spaltenabstand
+\setlength{\columnseprule}{1pt}  %Balken zwischen Spalten {0pt}->keine Balken
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Einheitslänge für picture-Umgebungen
+%\setlength{\unitlength}{1.0cm}
+\unitlength1cm
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Grafikpfad, hier liegen alle Bilder
+%\graphicspath{{images/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Zaehler fuer lineale. Sie werden gebraucht, wenn das Linealmacro
+% included wird
+\newcounter{skalax}
+\newcounter{skalay}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Kopf, hier funktioniert alles mit 'put'
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\parbox{\textwidth}
+%{
+  \begin{center}
+    \vspace*{0.006\textheight}
+   % Titel und Autor
+    {\huge \textbf{Title title title title title title\\[-0.003\textheight] 
+        title title title title title title title\\[-0.003\textheight]
+        title title title}\\}%[0.03\textheight]
+    \vspace*{0.018\textheight}
+    {\LARGE \textbf{Vorname Name}}
+  \end{center}
+  % Logos einbinden (per Hand plazieren)
+  \begin{picture}(0,0)
+    \put(70.0 , 4.6){\includegraphics[height=80mm]{logo}}
+    \put(71.8 , 2.8){\LARGE \textsf{\textbf{TU Berlin}}}
+    \put(0.0  , 4.3){\includegraphics[height=83mm]{logo}}
+    \put(0.0  , 3.1){\large \textsf{\textbf{Institut für XXXXXXXX}}}
+    \put(1.2  , 1.9){\large \textsf{\textbf{XXXXXXXXXXX}}}
+    \put(1.4  , 0.4){\large \textsf{\textbf{Prof. Dr.-Ing X. Xxx}}}
+  \end{picture}
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Einstellung des Eckenradius' der ovalen Boxen (\Ovalbox)
+\cornersize*{5mm}
+
+
+\linethickness{0.1mm}
+\setlength{\fboxrule}{2.25mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% neuer Kasten
+\Ovalbox
+{
+  \parbox{\textwidth}{
+    \begin{multicols}{3}
+      
+      \input{texta}
+      \input{textb}
+      \input{textb}
+      
+    \end{multicols}
+  }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% neuer Kasten
+\vspace*{0.002\textheight}
+\Ovalbox
+{
+  \parbox{\textwidth}{
+    \begin{multicols}{3}
+      
+      \input{textb}
+      \input{textb}
+      
+    \end{multicols}
+  }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% neuer Kasten
+\vspace*{0.002\textheight}
+\Ovalbox%\fbox
+{
+  \parbox{\textwidth}{
+    \begin{multicols}{3}
+      
+      \input{textb}
+      \input{texta}
+      \input{literatur}
+      
+    \end{multicols}
+  }
+}
+
+\end{document}
