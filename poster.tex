@@ -36,6 +36,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Ist für Boxen (wie das hier benutzte Ovalbox) zuständig
 \usepackage{fancybox}
+\usepackage{adjustbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Graphikpaket, ermöglicht png, jpg und pdf bilder
@@ -131,7 +132,7 @@
 \vspace*{0.002\textheight}
 \Ovalbox
 {
-  \parbox{0.45\textwidth}{
+  \parbox{0.485\textwidth}{
     \begin{multicols}{2}
       
       \input{texta}
@@ -140,13 +141,10 @@
     \end{multicols}
   }
 }
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% neuer Kasten
-%\vspace*{0.002\textheight}
+\hfill
 \Ovalbox
 {
-  \parbox{0.45\textwidth}{
+  \parbox{0.485\textwidth}{
     \begin{multicols}{2}
       
       \input{texta}
@@ -171,5 +169,4 @@
     \end{multicols}
   }
 }
-
 \end{document}
